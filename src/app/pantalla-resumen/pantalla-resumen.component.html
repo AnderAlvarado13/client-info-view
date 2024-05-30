@@ -1,1 +1,46 @@
-<p>pantalla-resumen works!</p>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <b>Información Básica</b>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="numeroDocumento" style="color: #070f26;">Primer Nombre</label>
+              <input type="text" class="form-control" id="primerNombre" name="primerNombre" [(ngModel)]="primerNombre" [disabled]="infoVista" required>
+            </div>
+            <div class="form-group">
+              <label for="numeroDocumento" style="color: #070f26;">Segundo Nombre</label>
+              <input type="text" class="form-control" id="segundoNombre" name="segundoNombre" [(ngModel)]="segundoNombre"  [disabled]="infoVista" required>
+            </div>
+            <div class="form-group">
+              <label for="numeroDocumento" style="color: #070f26;">Primer Apellido</label>
+              <input type="text" class="form-control" id="primerApellido" name="primerApellido" [(ngModel)]="primerApellido"  [disabled]="infoVista" required>
+            </div>
+            <div class="form-group">
+              <label for="numeroDocumento" style="color: #070f26;">Segundo Apellido</label>
+              <input type="text" class="form-control" id="segundoApellido" name="segundoApellido" [(ngModel)]="segundoApellido"  [disabled]="infoVista" required>
+            </div>
+            <div class="form-group">
+              <label for="numeroDocumento" style="color: #070f26;">Teléfono</label>
+              <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="telefono"  [disabled]="infoVista" required>
+            </div>
+            <div class="form-group">
+              <label for="numeroDocumento" style="color: #070f26;">Dirección</label>
+              <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="direccion" [disabled]="infoVista" required>
+            </div>
+            <div class="form-group">
+              <label for="numeroDocumento" style="color: #070f26;">Cuidad de Residencia</label>
+              <input type="text" class="form-control" id="ciudadResidencia" name="ciudadResidencia" [(ngModel)]="ciudadResidencia" [disabled]="infoVista" required>
+            </div>
+            <div class="text-center mt-3 d-grid gap-2 col-4 mx-auto">
+              <button (click)="volver()" class="btn btn-danger">Volver</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

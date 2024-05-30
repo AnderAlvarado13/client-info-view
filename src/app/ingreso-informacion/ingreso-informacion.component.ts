@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2'
 import { ClientService } from '../client.service';
+import { Router, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-ingreso-informacion',
@@ -8,7 +9,7 @@ import { ClientService } from '../client.service';
   styleUrls: ['./ingreso-informacion.component.sass']
 })
 export class IngresoInformacionComponent implements OnInit {
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService, private router: Router) { }
   tipoDocumento: string = '';
   numeroDocumento: string = '';
   botonBuscarHabilitado: string|boolean = false;
@@ -42,11 +43,17 @@ export class IngresoInformacionComponent implements OnInit {
   getClientInfo(tipoDocumento: string, numeroDocumento: string): void {
     this.clientService.getClientInfo(tipoDocumento, numeroDocumento)
       .subscribe(
-        function (data) {
-          console.log('Client Info:', data);
+         (data) => {
+          // Informacion del cliente JSON
+          this.clientService.info = data;
+          this.router.navigate(['/resumen']);
         },
         error => {
-          console.error('Error:', error);
+          Swal.fire({
+            title: "Informacion",
+            text: "Por favor verifique lo datos ingresados",
+            icon: "question"
+          });
         }
       );
   }
