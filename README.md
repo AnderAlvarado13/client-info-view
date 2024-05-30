@@ -4,6 +4,8 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## Development server
 
+Ejecute ´npm i --force´ permite crear los archivos necesarios para gestionar el proyecto.
+
 Ejecute `ngserve` para un servidor de desarrollo. Navegue hasta `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos fuente.
 
 > [!NOTE]
